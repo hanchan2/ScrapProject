@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Extract EXIF Data</title>
+</head>
+<body>
+
+<img src="handry.jpg" id="image" style="max-width: 200px;"><br>
+    <script type="text/javascript" src="./exif.min.js"></script>
+    <script>
+        // Our code goes here
+		document.getElementById("image").onclick = function() {
+
+			EXIF.getData(this, function() {
+
+				myData = this;
+
+				console.log(myData.exifdata);
+			});
+		}
+
+    </script>
+	
+	
+<p id="pic-info"></p>
+<p id="map-link"></p>
+</body>
+</html>
